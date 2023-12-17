@@ -5,12 +5,12 @@ if [ -z "$BASE_URL" ]; then
     exit 1
 fi
 
-if [ -z "$BNR_URL" ]; then
+if [ -z "$STORE_URL" ]; then
     echo "Error: BNR_URL is not set."
     exit 1
 fi
 
-echo "window._env_ = { \"BASE_URL\": \"$BASE_URL\",  \"BNR_URL\": \"$BNR_URL\"};" > /usr/share/nginx/html/assets/config.js
+echo "window._env_ = { \"BASE_URL\": \"$BASE_URL\",  \"STORE_URL\": \"$STORE_URL\"};" > /usr/share/nginx/html/assets/config.js
 
 sed -i "8i \ \ \ \ <script type=\"module\" src=\"/assets/config.js\"></script>" /usr/share/nginx/html/index.html
 
